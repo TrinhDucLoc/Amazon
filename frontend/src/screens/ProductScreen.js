@@ -38,16 +38,17 @@ export default function ProductScreen(props) {
                 <li>
                   <h1>{product.name}</h1>
                 </li>
-                <li>
+                {/* <li>
                   <Rating
                     rating={product.rating}
                     numReviews={product.numReviews}
                   ></Rating>
-                </li>
+                </li> */}
                 <li>Pirce : ${product.price}</li>
+                <li>Number in stock: {product.countInStock}</li>
                 <li>
-                  Description:
-                  <p>{product.description}</p>
+                  Description: {product.description}
+                  {/* <p>{product.description}</p> */}
                 </li>
               </ul>
             </div>
