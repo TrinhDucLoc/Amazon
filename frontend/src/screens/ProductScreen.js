@@ -16,6 +16,10 @@ export default function ProductScreen(props) {
     dispatch(detailsProduct(productId));
   }, [dispatch, productId]);
 
+  const addToCartHandler = () => {
+    props.history.push(`/cart/${productId}?quantity=${quantity}`);
+  };
+
   return (
     <div>
       {loading ? (
@@ -96,7 +100,12 @@ export default function ProductScreen(props) {
                       </li>
 
                       <li>
-                        <button className="primary block">Add to Cart</button>
+                        <button
+                          onClick={addToCartHandler}
+                          className="primary block"
+                        >
+                          Add to Cart
+                        </button>
                       </li>
                     </>
                   )}
