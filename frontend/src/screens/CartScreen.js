@@ -41,6 +41,17 @@ export default function CartScreen(props) {
           </MessageBox>
         ) : (
           <ul>
+            <li>
+              <div className="row">
+                <div>Image</div>
+                <div className="min-30">Name</div>
+                <div>Product Cost</div>
+                <div>Quantity</div>
+                <div>Sub Product</div>
+                <div>Delete</div>
+              </div>
+            </li>
+
             {cartItems.map((item) => (
               <li key={item.product}>
                 <div className="row">
@@ -64,7 +75,7 @@ export default function CartScreen(props) {
                       value={item.quantity}
                       onChange={(e) =>
                         dispatch(
-                          addToCart(item.product, Number(e.target.value))
+                          addToCart(item.productId, Number(e.target.value))
                         )
                       }
                     >
@@ -76,7 +87,7 @@ export default function CartScreen(props) {
                     </select>
                   </div>
                   {/* Sub Product Cost */}
-                  {/* <div>${item.price * item.quantity}</div> */}
+                  <div>${item.price * item.quantity}</div>
 
                   {/* Delete Button */}
                   <div>
