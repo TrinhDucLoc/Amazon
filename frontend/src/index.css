@@ -130,6 +130,9 @@ a.brand {
 .min-30 {
   min-width: 30rem;
 }
+/* .card-col-2 {
+  min-width: 30rem;
+} */
 
 /* Image */
 img {
@@ -163,6 +166,39 @@ img.small {
 .price {
   font-size: 2rem;
 }
+/* Card title */
+.title-cart-col-1 {
+}
+.title-cart-col-2 {
+  margin-left: 40px;
+}
+.title-cart-col-3 {
+  margin-left: 20px;
+}
+.title-cart-col-4 {
+  margin-left: 5px;
+}
+.title-cart-col-5 {
+  margin-right: 20px;
+}
+.title-cart-col-6 {
+  margin-right: 10px;
+}
+
+.cart-col-1 {
+}
+.cart-col-2 {
+  /* min-width: 30rem; */
+}
+.cart-col-3 {
+}
+.cart-col-4 {
+}
+.cart-col-5 {
+}
+.cart-col-6 {
+}
+
 /* Rating */
 .rating span {
   color: #f0c040;

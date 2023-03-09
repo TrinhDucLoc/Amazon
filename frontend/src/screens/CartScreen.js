@@ -43,12 +43,12 @@ export default function CartScreen(props) {
           <ul>
             <li>
               <div className="row">
-                <div>Image</div>
-                <div className="min-30">Name</div>
-                <div>Product Cost</div>
-                <div>Quantity</div>
-                <div>Sub Product</div>
-                <div>Delete</div>
+                <div className="title-cart-col-1">Image</div>
+                <div className="title-cart-col-2">Name</div>
+                <div className="title-cart-col-3">Product Cost</div>
+                <div className="title-cart-col-4">Quantity</div>
+                <div className="title-cart-col-5">Sub Product</div>
+                <div className="title-cart-col-6">Delete</div>
               </div>
             </li>
 
@@ -56,7 +56,7 @@ export default function CartScreen(props) {
               <li key={item.product}>
                 <div className="row">
                   {/* image */}
-                  <div>
+                  <div className="cart-col-1">
                     <img
                       src={item.image}
                       alt={item.name}
@@ -64,13 +64,13 @@ export default function CartScreen(props) {
                     ></img>
                   </div>
                   {/* name */}
-                  <div className="min-30">
+                  <div className="cart-col-2">
                     <Link to={`/product/${item.product}`}>{item.name}</Link>
                   </div>
                   {/* product cost */}
-                  <div>${item.price}</div>
+                  <div className="cart-col-3">${item.price}</div>
                   {/* quantity */}
-                  <div>
+                  <div className="cart-col-4">
                     <select
                       value={item.quantity}
                       onChange={(e) =>
@@ -87,10 +87,12 @@ export default function CartScreen(props) {
                     </select>
                   </div>
                   {/* Sub Product Cost */}
-                  <div>${item.price * item.quantity}</div>
+                  <div className="cart-col-5">
+                    ${item.price * item.quantity}
+                  </div>
 
                   {/* Delete Button */}
-                  <div>
+                  <div className="cart-col-6">
                     <button
                       type="button"
                       onClick={() => removeFromCartHandler(item.productId)}
