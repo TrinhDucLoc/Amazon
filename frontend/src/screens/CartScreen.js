@@ -98,6 +98,7 @@ export default function CartScreen(props) {
                       onClick={() => removeFromCartHandler(item.productId)}
                     >
                       Delete
+                      {/* <i class="fa-regular fa-trash-can"></i> */}
                     </button>
                   </div>
                 </div>
