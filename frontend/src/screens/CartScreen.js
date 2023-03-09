@@ -53,7 +53,7 @@ export default function CartScreen(props) {
             </li>
 
             {cartItems.map((item) => (
-              <li key={item.product}>
+              <li key={item.productId}>
                 <div className="row">
                   {/* image */}
                   <div className="cart-col-1">
@@ -65,7 +65,7 @@ export default function CartScreen(props) {
                   </div>
                   {/* name */}
                   <div className="cart-col-2">
-                    <Link to={`/product/${item.product}`}>{item.name}</Link>
+                    <Link to={`/product/${item.productId}`}>{item.name}</Link>
                   </div>
                   {/* product cost */}
                   <div className="cart-col-3">${item.price}</div>
