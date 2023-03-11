@@ -256,7 +256,7 @@ img.small {
 }
 .form label {
   margin: 1rem 0;
-  display: block;
+  /* display: block; */
 }
 
 /* Dropdown */
