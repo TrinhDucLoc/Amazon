@@ -68,7 +68,9 @@ export default function CartScreen(props) {
                     <Link to={`/product/${item.productId}`}>{item.name}</Link>
                   </div>
                   {/* product cost */}
-                  <div className="cart-col-3">${item.price}</div>
+                  <div className="cart-col-3">
+                    ${item.price.toLocaleString("en-US")}
+                  </div>
                   {/* quantity */}
                   <div className="cart-col-4">
                     <select
@@ -88,7 +90,7 @@ export default function CartScreen(props) {
                   </div>
                   {/* Sub Product Cost */}
                   <div className="cart-col-5">
-                    ${item.price * item.quantity}
+                    ${(item.price * item.quantity).toLocaleString("en-US")}
                   </div>
 
                   {/* Delete Button */}
@@ -113,7 +115,10 @@ export default function CartScreen(props) {
             <li>
               <h2>
                 Subtotal ({cartItems.reduce((a, c) => a + c.quantity, 0)} items)
-                : ${cartItems.reduce((a, c) => a + c.price * c.quantity, 0)}
+                : $
+                {cartItems
+                  .reduce((a, c) => a + c.price * c.quantity, 0)
+                  .toLocaleString("en-US")}
               </h2>
               {/* <h2>
                 Subtotal ({cartItems.reduce((a, c) => a + c.quantity, 0)} items) : $

@@ -48,7 +48,7 @@ export default function ProductScreen(props) {
                     numReviews={product.numReviews}
                   ></Rating>
                 </li> */}
-                <li>Pirce : ${product.price}</li>
+                <li>Price: ${product.price.toLocaleString("en-US")}</li>
                 <li>Number in stock: {product.countInStock}</li>
                 <li>
                   Description: {product.description}
@@ -62,7 +62,9 @@ export default function ProductScreen(props) {
                   <li>
                     <div className="row">
                       <div>Price</div>
-                      <div className="price">${product.price}</div>
+                      <div className="price">
+                        ${product.price.toLocaleString("en-US")}
+                      </div>
                     </div>
                   </li>
                   <li>
