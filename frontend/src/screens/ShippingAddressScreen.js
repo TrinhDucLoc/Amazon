@@ -12,16 +12,24 @@ export default function ShippingAddressScreen(props) {
     props.history.push("/signin");
   }
   const [fullName, setFullName] = useState(shippingAddress.fullName);
+  const [phone, setPhone] = useState(shippingAddress.phone);
   const [address, setAddress] = useState(shippingAddress.address);
-  const [city, setCity] = useState(shippingAddress.city);
-  const [postalCode, setPostalCode] = useState(shippingAddress.postalCode);
-  const [country, setCountry] = useState(shippingAddress.country);
+  // const [city, setCity] = useState(shippingAddress.city);
+  // const [postalCode, setPostalCode] = useState(shippingAddress.postalCode);
+  // const [country, setCountry] = useState(shippingAddress.country);
   const dispatch = useDispatch();
 
   const submitHandler = (e) => {
     e.preventDefault();
     dispatch(
-      saveShippingAddress({ fullName, address, city, postalCode, country })
+      saveShippingAddress({
+        fullName,
+        phone,
+        address,
+        // city,
+        // postalCode,
+        // country,
+      })
     );
     props.history.push("/payment");
   };
@@ -49,6 +57,19 @@ export default function ShippingAddressScreen(props) {
           ></input>
         </div>
 
+        {/* Phone number */}
+        <div>
+          <label htmlFor="phone">Phone Number</label>
+          <input
+            type="text"
+            id="phone"
+            placeholder="Enter phone number"
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
+            required
+          ></input>
+        </div>
+
         {/* Address */}
         <div>
           <label htmlFor="address">Address</label>
@@ -63,7 +84,7 @@ export default function ShippingAddressScreen(props) {
         </div>
 
         {/* City */}
-        <div>
+        {/* <div>
           <label htmlFor="city">City</label>
           <input
             type="text"
@@ -73,10 +94,10 @@ export default function ShippingAddressScreen(props) {
             onChange={(e) => setCity(e.target.value)}
             required
           ></input>
-        </div>
+        </div> */}
 
         {/* Postal Code */}
-        <div>
+        {/* <div>
           <label htmlFor="postalCode">Postal Code</label>
           <input
             type="text"
@@ -86,10 +107,10 @@ export default function ShippingAddressScreen(props) {
             onChange={(e) => setPostalCode(e.target.value)}
             required
           ></input>
-        </div>
+        </div> */}
 
         {/*  */}
-        <div>
+        {/* <div>
           <label htmlFor="country">Country</label>
           <input
             type="text"
@@ -99,7 +120,7 @@ export default function ShippingAddressScreen(props) {
             onChange={(e) => setCountry(e.target.value)}
             required
           ></input>
-        </div>
+        </div> */}
         <div>
           <label />
           <button className="primary" type="submit">

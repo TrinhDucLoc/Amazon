@@ -9,7 +9,7 @@ export default function PaymentMethodScreen(props) {
   if (!shippingAddress.address) {
     props.history.push("/shipping");
   }
-  const [paymentMethod, setPaymentMethod] = useState("PayPal");
+  const [paymentMethod, setPaymentMethod] = useState("COD");
   const dispatch = useDispatch();
   const submitHandler = (e) => {
     e.preventDefault();
@@ -49,7 +49,7 @@ export default function PaymentMethodScreen(props) {
               value="PayPal"
               name="paymentMethod"
               required
-              checked
+              // checked
               onChange={(e) => setPaymentMethod(e.target.value)}
             ></input>
             <label htmlFor="paypal">PayPal</label>

@@ -120,6 +120,11 @@ a.brand {
 .row.top {
   align-items: flex-start;
 }
+.order-col-1 {
+  flex: 1 1 25rem;
+  /* margin-top: 20px; */
+}
+
 .col-1 {
   flex: 1 1 25rem;
   margin-top: 20px;
