@@ -66,6 +66,7 @@ function App() {
           <Route path="/shipping" component={ShippingAddressScreen}></Route>
           <Route path="/payment" component={PaymentMethodScreen}></Route>
           <Route path="/placeorder" component={PlaceOrderScreen}></Route>
+          {/* <Route path="/orderSuccess" component={OrderSuccessScreen}></Route> */}
         </main>
         {/*  */}
         <footer className="row center">All right reserved</footer>
