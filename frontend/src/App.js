@@ -10,6 +10,7 @@ import RegisterScreen from "./screens/RegisterScreen";
 import ShippingAddressScreen from "./screens/ShippingAddressScreen";
 import PaymentMethodScreen from "./screens/PaymentMethodScreen";
 import PlaceOrderScreen from "./screens/PlaceOrderScreen";
+import OrderSuccessScreen from "./screens/OrderSuccessScreen";
 
 function App() {
   const cart = useSelector((state) => state.cart);
@@ -27,7 +28,7 @@ function App() {
         <header className="row">
           <div>
             <Link className="brand" to="/">
-              Amazon
+              Home Racer Shop
             </Link>
           </div>
           <div>
@@ -66,7 +67,7 @@ function App() {
           <Route path="/shipping" component={ShippingAddressScreen}></Route>
           <Route path="/payment" component={PaymentMethodScreen}></Route>
           <Route path="/placeorder" component={PlaceOrderScreen}></Route>
-          {/* <Route path="/orderSuccess" component={OrderSuccessScreen}></Route> */}
+          <Route path="/orderSuccess" component={OrderSuccessScreen}></Route>
         </main>
         {/*  */}
         <footer className="row center">All right reserved</footer>
