@@ -88,27 +88,63 @@ export default function PlaceOrderScreen(props) {
               <div className="card card-body">
                 <h2>Order Items</h2>
                 <ul>
+                  <li>
+                    <div className="row">
+                      <div className="order-col-1">
+                        <b>Image</b>
+                      </div>
+                      <div className="order-col-2">
+                        <b>Name</b>
+                      </div>
+                      <div className="order-col-3">
+                        <b>Product Cost</b>
+                      </div>
+                      <div className="order-col-4">
+                        <b>Quantity</b>
+                      </div>
+                      <div className="order-col-5">
+                        <b>Sub Product</b>
+                      </div>
+                    </div>
+                  </li>
+
                   {cart.cartItems.map((item) => (
                     <li key={item.productId}>
                       <div className="row">
-                        <div>
+                        {/* image */}
+                        <div className="order-col-1">
                           <img
                             src={item.image}
                             alt={item.name}
                             className="small"
                           ></img>
                         </div>
-                        <div className="min-30">
+
+                        {/* name */}
+                        <div className="order-col-2">
                           <Link to={`/product/${item.productId}`}>
                             {item.name}
                           </Link>
                         </div>
+                        {/* product cost */}
+                        <div className="order-col-3">
+                          ${item.price.toLocaleString("en-US")}
+                        </div>
+                        {/* quantity */}
+                        <div className="order-col-4">
+                          <div>{item.quantity}</div>
+                        </div>
+                        {/* Sub Product Cost */}
+                        <div className="order-col-5">
+                          $
+                          {(item.price * item.quantity).toLocaleString("en-US")}
+                        </div>
 
-                        <div>
+                        {/* <div>
                           {item.quantity} x $
                           {item.price.toLocaleString("en-US")} = $
                           {(item.quantity * item.price).toLocaleString("en-US")}
-                        </div>
+                        </div> */}
                       </div>
                     </li>
                   ))}

@@ -38,7 +38,7 @@ export default function CartScreen(props) {
   return (
     <div className="row top">
       <div className="col-2">
-        <h1>Shopping Cart</h1>
+        {/* <h1>Shopping Cart</h1> */}
         {cartItems.length === 0 ? (
           <MessageBox>
             Cart is empty. <Link to="/">Go shopping</Link>
@@ -47,12 +47,24 @@ export default function CartScreen(props) {
           <ul>
             <li>
               <div className="row">
-                <div className="title-cart-col-1">Image</div>
-                <div className="title-cart-col-2">Name</div>
-                <div className="title-cart-col-3">Product Cost</div>
-                <div className="title-cart-col-4">Quantity</div>
-                <div className="title-cart-col-5">Sub Product</div>
-                <div className="title-cart-col-6">Delete</div>
+                <div className="title-cart-col-1">
+                  <b>Image</b>
+                </div>
+                <div className="title-cart-col-2">
+                  <b>Name</b>
+                </div>
+                <div className="title-cart-col-3">
+                  <b>Product Cost</b>
+                </div>
+                <div className="title-cart-col-4">
+                  <b>Quantity</b>
+                </div>
+                <div className="title-cart-col-5">
+                  <b>Sub Product</b>
+                </div>
+                <div className="title-cart-col-6">
+                  <b>Delete</b>
+                </div>
               </div>
             </li>
 

@@ -162,7 +162,7 @@ a.brand {
 }
 .order-col-1 {
   flex: 1 1 25rem;
-  /* margin-top: 20px; */
+  margin-top: 20px;
 }
 
 .col-1 {
@@ -171,6 +171,7 @@ a.brand {
 }
 .col-2 {
   flex: 2 1 50rem;
+  margin-top: 20px;
 }
 
 .min-30 {
@@ -345,4 +346,24 @@ img.small {
 .checkout-steps > div.active {
   border-top-color: #f08000;
   color: #f08000;
+}
+
+/* order */
+.order-col-1 {
+}
+.order-col-2 {
+  position: absolute;
+  left: 180px;
+}
+.order-col-3 {
+  position: absolute;
+  left: 350px;
+}
+.order-col-4 {
+  position: absolute;
+  left: 550px;
+}
+.order-col-5 {
+  position: absolute;
+  left: 700px;
 }
