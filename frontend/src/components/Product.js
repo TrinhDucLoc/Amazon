@@ -19,7 +19,7 @@ export default function Product(props) {
           rating={product.rating}
           numReviews={product.numReviews}
         ></Rating> */}
-        <div className="price">${product.price}</div>
+        <div className="price">${product.price.toLocaleString("en-US")}</div>
       </div>
     </div>
   );

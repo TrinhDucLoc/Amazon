@@ -94,6 +94,14 @@ button.primary {
   background-color: #f02020;
   color: #ffffff;
 }
+button.primary:hover {
+  /* background-color: #f0c040; */
+  background-color: #f02020;
+  color: #ffffff;
+  box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
+  cursor: pointer;
+}
+
 button.block {
   width: 100%;
 }

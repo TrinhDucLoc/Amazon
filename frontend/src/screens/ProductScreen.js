@@ -49,7 +49,10 @@ export default function ProductScreen(props) {
                   ></Rating>
                 </li> */}
                 <li>Price: ${product.price.toLocaleString("en-US")}</li>
-                <li>Number in stock: {product.countInStock}</li>
+                <li>
+                  Number in stock:{" "}
+                  {product.countInStock.toLocaleString("en-US")}
+                </li>
                 <li>
                   Description: {product.description}
                   {/* <p>{product.description}</p> */}

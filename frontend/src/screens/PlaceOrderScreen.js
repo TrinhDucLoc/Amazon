@@ -105,8 +105,9 @@ export default function PlaceOrderScreen(props) {
                         </div>
 
                         <div>
-                          {item.quantity} x ${item.price} = $
-                          {item.quantity * item.price}
+                          {item.quantity} x $
+                          {item.price.toLocaleString("en-US")} = $
+                          {(item.quantity * item.price).toLocaleString("en-US")}
                         </div>
                       </div>
                     </li>
@@ -125,13 +126,15 @@ export default function PlaceOrderScreen(props) {
               <li>
                 <div className="row">
                   <div>Items</div>
-                  <div>${cart.productCost.toFixed(2)}</div>
+                  {/* <div>${cart.productCost.toFixed(2)}</div> */}
+                  <div>${cart.productCost.toLocaleString("en-US")}</div>
                 </div>
               </li>
               <li>
                 <div className="row">
                   <div>Shipping</div>
-                  <div>${cart.shippingPrice.toFixed(2)}</div>
+                  {/* <div>${cart.shippingPrice.toFixed(2)}</div> */}
+                  <div>${cart.shippingPrice.toLocaleString("en-US")}</div>
                 </div>
               </li>
               {/*  */}
@@ -147,7 +150,8 @@ export default function PlaceOrderScreen(props) {
                     <strong>Order Total</strong>
                   </div>
                   <div>
-                    <strong>${cart.totalCost.toFixed(2)}</strong>
+                    {/* <strong>${cart.totalCost.toFixed(2)}</strong> */}
+                    <strong>${cart.totalCost.toLocaleString("en-US")}</strong>
                   </div>
                 </div>
               </li>
