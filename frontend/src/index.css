@@ -3,6 +3,7 @@ html {
   box-sizing: border-box;
 }
 body {
+  background: #fff;
   margin: 0;
   height: 100vh;
   font-size: 1.6rem;
@@ -43,7 +44,7 @@ footer {
 /* Common */
 h1 {
   font-size: 1.8rem;
-  padding: 1rem 0;
+  /* padding: 1rem 0; */
 }
 h2 {
   font-size: 1.6rem;
@@ -125,6 +126,25 @@ a.brand {
 .row.center {
   justify-content: center;
 }
+
+/* payment */
+.payment:hover {
+  cursor: pointer;
+}
+
+.orderSuccess {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
+}
+
+.row.center:hover {
+  box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
+  cursor: pointer;
+}
+
 .success-message {
   justify-content: center;
   font-size: 50px;
@@ -174,7 +194,16 @@ img.small {
   background-color: #f8f8f8;
   border-radius: 0.5rem;
   margin: 1rem;
+
+  border: 1px solid #ccc;
+  background: #fff;
 }
+
+.card:hover {
+  box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
+  cursor: pointer;
+}
+
 .card-body {
   padding: 1rem;
 }
