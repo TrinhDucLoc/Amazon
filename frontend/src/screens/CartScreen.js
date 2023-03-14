@@ -1,7 +1,11 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { addToCart, removeFromCart } from "../actions/cartActions";
+import {
+  addToCart,
+  chooseQuantity,
+  removeFromCart,
+} from "../actions/cartActions";
 import MessageBox from "../components/MessageBox";
 
 export default function CartScreen(props) {
@@ -78,6 +82,7 @@ export default function CartScreen(props) {
                       onChange={(e) =>
                         dispatch(
                           addToCart(item.productId, Number(e.target.value))
+                          // chooseQuantity(item.productId, Number(e.target.value))
                         )
                       }
                     >

@@ -2,6 +2,7 @@ import Axios from "axios";
 
 import {
   CART_ADD_ITEM,
+  CART_CHOOSE_QUANTITY,
   CART_REMOVE_ITEM,
   CART_SAVE_PAYMENT_METHOD,
   CART_SAVE_SHIPPING_ADDRESS,
@@ -21,6 +22,29 @@ export const addToCart =
         quantity,
       },
     });
+    localStorage.setItem(
+      "cartItems",
+      JSON.stringify(getState().cart.cartItems)
+    );
+  };
+
+export const chooseQuantity =
+  (productId, quantity) => async (dispatch, getState) => {
+    // const { data } = await Axios.get(`/api/product/${productId}`);
+    // dispatch({
+    //   type: CART_CHOOSE_QUANTITY,
+    //   payload: {
+    //     name: data.name,
+    //     image: data.image,
+    //     price: data.price,
+    //     countInStock: data.countInStock,
+    //     productId: data.id,
+    //     quantity,
+    //   },
+    // });
+
+    dispatch({ type: CART_CHOOSE_QUANTITY, payload: { productId, quantity } });
+
     localStorage.setItem(
       "cartItems",
       JSON.stringify(getState().cart.cartItems)

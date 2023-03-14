@@ -1,5 +1,6 @@
 import {
   CART_ADD_ITEM,
+  CART_CHOOSE_QUANTITY,
   CART_EMPTY,
   CART_REMOVE_ITEM,
   CART_SAVE_PAYMENT_METHOD,
@@ -24,6 +25,20 @@ export const cartReducer = (state = { cartItems: [] }, action) => {
       } else {
         return { ...state, cartItems: [...state.cartItems, item] };
       }
+
+    //========================================================
+    // case CART_ADD_ITEM:
+    //   const existItem2 = state.cartItems.find(
+    //     (item) => item.productId === action.payload.productId
+    //   );
+    //   // if exist-item true just add quantity of the item and if not then push product to the state of the cart.cartItems
+    //   if (existItem2) {
+    //     existItem2.quantity += action.payload.quantity;
+    //   } else {
+    //     state.cartItems.push(action.payload);
+    //   }
+
+    // =====================================================
     case CART_REMOVE_ITEM:
       return {
         ...state,
@@ -38,6 +53,24 @@ export const cartReducer = (state = { cartItems: [] }, action) => {
       return { ...state, paymentMethod: action.payload };
     case CART_EMPTY:
       return { ...state, cartItems: [] };
+
+    case CART_CHOOSE_QUANTITY:
+      const item1 = action.payload;
+      const existItem1 = state.cartItems.find(
+        (x) => x.productId === item1.productId
+      );
+      //   If exist item => save update value of item. Else add item in the end cartItems
+      if (existItem1) {
+        return {
+          ...state,
+          cartItems: state.cartItems.map((x) =>
+            x.productId === existItem1.productId ? item1 : x
+          ),
+        };
+      } else {
+        return { ...state, cartItems: [...state.cartItems, item1] };
+      }
+
     default:
       return state;
   }
