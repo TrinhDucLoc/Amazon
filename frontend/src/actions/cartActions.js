@@ -30,26 +30,46 @@ export const addToCart =
 
 export const chooseQuantity =
   (productId, quantity) => async (dispatch, getState) => {
-    // const { data } = await Axios.get(`/api/product/${productId}`);
-    // dispatch({
-    //   type: CART_CHOOSE_QUANTITY,
-    //   payload: {
-    //     name: data.name,
-    //     image: data.image,
-    //     price: data.price,
-    //     countInStock: data.countInStock,
-    //     productId: data.id,
-    //     quantity,
-    //   },
-    // });
+    const { data } = await Axios.get(`/api/product1/${productId}`);
+    dispatch({
+      type: CART_CHOOSE_QUANTITY,
+      payload: {
+        name: data.name,
+        image: data.image,
+        price: data.price,
+        countInStock: data.countInStock,
+        productId: data.id,
+        quantity,
+      },
+    });
 
-    dispatch({ type: CART_CHOOSE_QUANTITY, payload: { productId, quantity } });
+    // dispatch({ type: CART_CHOOSE_QUANTITY, payload: { productId, quantity } });
 
     localStorage.setItem(
       "cartItems",
       JSON.stringify(getState().cart.cartItems)
     );
   };
+
+// export const chooseQuantity =
+//   (productId, quantity) => async (dispatch, getState) => {
+//     const { data } = await Axios.get(`/api/product/${productId}`);
+//     dispatch({
+//       type: CART_CHOOSE_QUANTITY,
+//       payload: {
+//         name: data.name,
+//         image: data.image,
+//         price: data.price,
+//         countInStock: data.countInStock,
+//         productId: data.id,
+//         quantity,
+//       },
+//     });
+//     localStorage.setItem(
+//       "cartItems",
+//       JSON.stringify(getState().cart.cartItems)
+//     );
+//   };
 
 export const removeFromCart = (productId) => (dispatch, getState) => {
   dispatch({ type: CART_REMOVE_ITEM, payload: productId });

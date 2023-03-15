@@ -26,6 +26,12 @@ export default function CartScreen(props) {
     }
   }, [dispatch, productId, quantity]);
 
+  // const chooseQuantityHandler = (productId, quantity) => {
+  //   // props.history.push(`/cart/${productId}?quantity=${quantity}`);
+
+  //   dispatch(removeFromCart(productId, quantity));
+  // };
+
   const removeFromCartHandler = (productId) => {
     // delete action
     dispatch(removeFromCart(productId));
@@ -84,19 +90,18 @@ export default function CartScreen(props) {
                     <Link to={`/product/${item.productId}`}>{item.name}</Link>
                   </div>
                   {/* product cost */}
-                  <div className="cart-col-3">
-                    ${item.price.toLocaleString("en-US")}
-                  </div>
+                  <div className="cart-col-3">${item.price}</div>
                   {/* quantity */}
                   <div className="cart-col-4">
                     <select
                       value={item.quantity}
                       onChange={(e) =>
                         dispatch(
-                          addToCart(item.productId, Number(e.target.value))
-                          // chooseQuantity(item.productId, Number(e.target.value))
+                          // addToCart(item.productId, Number(e.target.value))
+                          chooseQuantity(item.productId, Number(e.target.value))
                         )
                       }
+                      // onChange={() => chooseQuantityHandler(item.productId)}
                     >
                       {[...Array(item.countInStock).keys()].map((x) => (
                         <option key={x + 1} value={x + 1}>
